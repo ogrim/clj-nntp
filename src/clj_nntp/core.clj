@@ -16,7 +16,7 @@
 
 (defn newsgroups [server]
   (let [client (connect-and-authenticate server)
-        groups (doall (map #(.getNewsgroup ^NewsgroupInfo %) (.iterateNewsgroups client)))]
+        groups (doall (map #(.getNewsgroup %) (.iterateNewsgroups client)))]
     (.logout client)
     (.disconnect client)
     groups))
@@ -26,7 +26,6 @@
         client (connect-and-authenticate server)]
     (.addNewsgroup header (:newsgroup article))
     (.addHeaderField header "Organization" (:organization article))
-    (str (.toString header) (:body article))
     (if (.isAllowedToPost client)
       (let [writer (.postArticle client)]
         (.write writer (.toString header))
