@@ -1,4 +1,4 @@
-(defproject clj-nntp/clj-nntp "0.1.0-SNAPSHOT"
+(defproject clj-nntp/clj-nntp "0.1.1-SNAPSHOT"
   :description "A Clojure NNTP library wrapping Apache Commons Net NNTP"
   :url "https://github.com/ogrim/clj-nntp/"
   :license {:name "Apache License, Version 2.0"
